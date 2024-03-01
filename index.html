@@ -14,12 +14,12 @@
 </head>
 
 <body>
-    <nav class="nav">
+    <nav class="nav section">
     <div class="wrapper">
         <a href="#" class="nav__logo">XYZ</a>
         <div class="nav__subpages">
             <a href="#offers" class="nav__href">Oferta</a>
-            <a href="#" class="nav__href">Dlaczego XYZ?</a>
+            <a href="#why-we" class="nav__href">Dlaczego XYZ?</a>
             <a href="#" class="nav__href">Kontakt</a>
         </div>
         <button class="nav__button hamburger--spin" type="button">
@@ -30,23 +30,71 @@
     </div>
     <div class="nav__subpagesmobile">
         <a href="#offers" class="nav__href">Oferta</a>
-        <a href="#" class="nav__href">Dlaczego XYZ?</a>
+        <a href="#why-we" class="nav__href">Dlaczego XYZ?</a>
         <a href="#" class="nav__href">Kontakt</a>
     </div>
 </nav>
-    <section class="hero">
+    <section class="hero section">
         <div class="hero__bg"></div>
         <div class="wrapper">
-                <h1 class="hero__title">Tworzymy strony, które przekształcają Twoje cele w realność!</h1>
+            <h1 class="hero__title">Tworzymy strony, które przekształcają Twoje cele w realność!</h1>
         </div>
         <a href="#offers"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"
                 class="hero__arrow">
                 <path d="m20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8l8-8z" />
             </svg></a>
     </section>
-    <section class="offers" id="offers">
+    <section class="offers section" id="offers">
         <div class="wrapper">
             <h2 class="title">Oferta</h2>
+            <div class="offers__elements">
+                <div class="offers__element">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="offers__icon">
+                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5">
+                            <path
+                                d="M3.338 17A9.996 9.996 0 0 0 12 22a9.996 9.996 0 0 0 8.662-5M3.338 7A9.996 9.996 0 0 1 12 2a9.996 9.996 0 0 1 8.662 5" />
+                            <path
+                                d="M13 21.95s1.408-1.853 2.295-4.95M13 2.05S14.408 3.902 15.295 7M11 21.95S9.592 20.098 8.705 17M11 2.05S9.592 3.902 8.705 7M9 10l1.5 5l1.5-5l1.5 5l1.5-5M1 10l1.5 5L4 10l1.5 5L7 10m10 0l1.5 5l1.5-5l1.5 5l1.5-5" />
+                        </g>
+                    </svg>
+                    <h3 class="offers__title">Strona WWW</h3>
+                    <p class="offers__description">Strona internetowa to kluczowy element w budowaniu Twojego wizerunku
+                        i
+                        reputacji w sieci. Dzięki niej możesz pokazać światu swoją unikalną wizję, wartości oraz ofertę.
+                    </p>
+                    <a href="#contact" class="offers__href">Zapytaj o szczegóły</a>
+                </div>
+                <div class="offers__element">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="offers__icon">
+                        <path fill="currentColor"
+                            d="M6.65 42.3h3.94v3.642c0 4.364 2.203 6.566 6.65 6.566h32.11c4.405 0 6.65-2.203 6.65-6.566V23.428c0-4.342-2.245-6.545-6.65-6.545h-3.94v-3.43c0-4.364-2.224-6.566-6.63-6.566H6.65C2.225 6.887 0 9.089 0 13.452v22.303c0 4.363 2.224 6.544 6.65 6.544m.064-3.41c-2.118 0-3.304-1.123-3.304-3.326v-21.92c0-2.203 1.186-3.347 3.304-3.347h32.003c2.097 0 3.283 1.144 3.283 3.347v3.24H17.24c-4.447 0-6.65 2.182-6.65 6.545V38.89ZM14 23.618c0-2.203 1.165-3.326 3.283-3.326h32.003c2.097 0 3.304 1.123 3.304 3.326v17.685l-7.773-7.328a4.555 4.555 0 0 0-3.177-1.292c-1.186 0-2.203.402-3.198 1.27l-9.51 8.43l-3.791-3.431c-.89-.784-1.864-1.207-2.88-1.207c-.933 0-1.801.381-2.712 1.186L14 43.76Zm11.48 10.886c2.732 0 4.977-2.245 4.977-5.02c0-2.71-2.245-4.998-4.977-4.998c-2.754 0-4.999 2.288-4.999 4.999c0 2.774 2.245 5.02 4.999 5.02" />
+                    </svg>
+                    <h3 class="offers__title">Blog</h3>
+                    <p class="offers__description">
+                        Blog umożliwia Ci dzielenie się wiedzą, interakcję z czytelnikami oraz promowanie produktów lub
+                        usług, co pozwala na budowanie społeczności wokół Twojej marki.</p>
+                    <a href="#contact" class="offers__href">Zapytaj o szczegóły</a>
+                </div>
+                <div class="offers__element">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" class="offers__icon">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            d="M.508.5H2.95l.87 8.65a1 1 0 0 0 1 .85h6.3a1 1 0 0 0 1-.68l1.33-4a.999.999 0 0 0-.14-.9a1 1 0 0 0-.86-.42H3.3m7.65 9.5a.5.5 0 1 1 0-1a.5.5 0 0 1 0 1m-6.5 0a.5.5 0 1 1 0-1a.5.5 0 0 1 0 1M6.688 6v2m3-2v2" />
+                    </svg>
+                    <h3 class="offers__title">Sklep</h3>
+                    <p class="offers__description">Sklep internetowy otwiera przed Tobą szerokie możliwości w
+                        zakresie handlu, gdyż umożliwia Ci dotarcie
+                        do znacznie większej liczby klientów. Dzięki
+                        temu, masz szansę na rozszerzenie zasięgu swojego biznesu.</p>
+                    <a href="#contact" class="offers__href">Zapytaj o szczegóły</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="why-we section">
+        <div class="wrapper">
+            <h2 class="title">Dlaczego XYZ?</h2>
+            <p style="font-size: 2rem; text-align: center;">Sekcja w trakcie budowy!</p>
         </div>
     </section>
     <script src="dist/js/index.min.js"></script>

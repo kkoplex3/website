@@ -21,6 +21,10 @@ $action: hsl(348, 100%, 50%);
 	padding: 0;
 }
 
+// * {
+// 	outline: 1px solid red;
+// }
+
 html {
 	scroll-behavior: smooth;
 	scroll-padding-top: 5rem;
@@ -34,21 +38,37 @@ body {
 }
 
 .body--overflow {
-	overflow: hidden;
+	overflow-y: hidden;
+}
+
+.section {
+	width: 100%;
 }
 
 .title {
-	padding: 1em 0;
-	font-size: 4rem;
+	position: relative;
+	padding: 1em 0 0.1em;
+	margin-bottom: 1.2em;
+	font-size: 3.5rem;
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
+
+	&::after {
+		position: absolute;
+		width: 5rem;
+		height: 0.3rem;
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%);
+		background-color: $secondary;
+		content: '';
+	}
 }
 
 //NAV
 
 .nav {
 	position: fixed;
-	width: 100%;
 	height: 5rem;
 	background-color: transparent;
 	transition: background-color 0.3s;
@@ -63,18 +83,20 @@ body {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		padding: 0;
 		height: 100%;
 	}
 
 	&__logo {
-		padding: 1.95rem 0.2rem;
+		padding: 0 2rem;
+		line-height: 5rem;
 		font-size: 2rem;
 		text-decoration: none;
 		color: $ptxt;
 	}
 
 	&__button {
-		padding: 1.95rem 0.2rem;
+		padding: 1rem 2rem;
 		background: none;
 		border: none;
 		cursor: pointer;
@@ -92,27 +114,15 @@ body {
 		text-align: center;
 		background-color: $secondary;
 		border-top: 1px solid $primary;
-		animation: menuAnimation 0.5s;
+		transition: 0.5s;
 
 		&--dflex {
 			display: flex;
 		}
-
-		@keyframes menuAnimation {
-			from {
-				transform: translateY(-10%);
-				opacity: 0;
-			}
-
-			to {
-				transform: translateY(0);
-				opacity: 1;
-			}
-		}
 	}
 
 	&__href {
-		padding: 1.95rem 1.3rem;
+		padding: 1.7rem 1.3rem;
 		font-size: 1.3rem;
 		text-decoration: none;
 		transition: color 0.3s;
@@ -127,10 +137,10 @@ body {
 //HERO
 .hero {
 	position: relative;
-	width: 100vw;
 	height: 100vh;
 	background-image: url('../img/coding-sm.jpg');
 	background-size: cover;
+	background-attachment: fixed;
 	background-position: 20% 50%;
 
 	&__bg {
@@ -155,8 +165,11 @@ body {
 		letter-spacing: 2px;
 		text-align: center;
 		animation: heroTitleAnimation 1s forwards;
-		color: $ptxt;
 		z-index: 1;
+		background: rgb(183, 187, 187);
+		background: linear-gradient(140deg, rgb(146, 148, 148) 0%, rgb(169, 169, 169) 20%, rgb(255, 255, 255) 50%);
+		background-clip: text;
+		color: transparent;
 	}
 
 	@keyframes heroTitleAnimation {
@@ -200,6 +213,74 @@ body {
 	}
 }
 
+//OFFERS
+.offers {
+	&__elements {
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__element {
+		display: flex;
+		width: 22rem;
+		min-height: 20rem;
+		padding: 2em;
+		position: relative;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__icon {
+		width: 2rem;
+		height: 2rem;
+	}
+
+	&__title {
+		margin-bottom: 0.7em;
+		font-size: 1.5rem;
+		font-family: 'Roboto', sans-serif;
+	}
+
+	&__description {
+		font-size: 1rem;
+		text-align: justify;
+	}
+
+	&__href {
+		padding: 1em 0;
+		font-size: 1.2rem;
+		font-weight: bold;
+		font-family: 'Roboto', sans-serif;
+		text-decoration: none;
+		transition: color 0.3s;
+		color: $primary;
+
+		&:hover {
+			color: $secondary;
+		}
+	}
+
+	.wrapper {
+		padding-bottom: 6rem;
+	}
+}
+
+//WHY-WE
+.why-we {
+	background-color: $primary;
+	color: $ptxt;
+	height: 500px;
+
+	.title {
+		&::after {
+			background-color: $stxt;
+		}
+	}
+}
+
 @media (min-width: 300px) {
 	.hero {
 		&__title {
@@ -228,7 +309,7 @@ body {
 @media (min-width: 768px) {
 	.nav {
 		&__logo {
-			padding: 1.95rem 1.3rem;
+			padding: 0 1.3rem;
 		}
 
 		&__button {
@@ -237,6 +318,10 @@ body {
 
 		&__subpages {
 			display: block;
+		}
+
+		.wrapper {
+			padding: 2rem;
 		}
 	}
 
@@ -251,6 +336,34 @@ body {
 			width: 115px;
 			height: 115px;
 			padding: 2rem;
+		}
+	}
+
+	.offers {
+		&__element {
+			padding: 2.6em;
+			min-height: 32rem;
+		}
+
+		&__icon {
+			width: 2.5rem;
+			height: 2.5rem;
+			margin-bottom: 0.5rem;
+		}
+
+		&__title {
+			margin-bottom: 1em;
+			font-size: 1.9rem;
+		}
+
+		&__description {
+			font-size: 1.5rem;
+		}
+
+		&__href {
+			position: absolute;
+			bottom: 0;
+			font-size: 1.6rem;
 		}
 	}
 }

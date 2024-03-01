@@ -18,13 +18,10 @@ navMenuMobileEl.forEach(el => {
 	el.addEventListener('click', () => {
 		navHamburgerBtn.classList.remove('is-active')
 		navMenuMobile.classList.remove('nav__subpagesmobile--dflex')
+		document.body.classList.remove('body--overflow')
 	})
 })
 
 window.addEventListener('scroll', () => {
-	if (window.scrollY >= scrollBreakpoint) {
-		nav.classList.add('nav--normalbg')
-	} else {
-		nav.classList.remove('nav--normalbg')
-	}
+	nav.classList.toggle('nav--normalbg', window.scrollY >= scrollBreakpoint)
 })
